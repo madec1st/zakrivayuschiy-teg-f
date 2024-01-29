@@ -3,12 +3,11 @@
 Будьте внимательны! Для корректной работы скриптов на этом сайте нужно, чтобы в HTML некоторые классы были названы особым образом:
 ✦ theme-dark — класс тёмной темы
 ✦ theme-light — класс светлой темы
-✦ like-icon — для svg-иконки анимированного сердца
-✦ card__like-button — для кнопки Like рядом с иконкой
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ card__icon-button — для кнопки, оборачивающей иконку
-✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца
-✦ button__text — для обозначения текстового элемента внутри кнопки
+✦ like-icon — для svg-иконки анимированного сердца +
+✦ card__like-button — для кнопки Like рядом с иконкой +
+✦ card__icon-button — для кнопки, оборачивающей иконку +
+✦ is-liked — для обозначения состояния лайкнутой иконки в виде сердца +
+✦ button__text — для обозначения текстового элемента внутри кнопки +
 
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
@@ -17,4 +16,194 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  max-inline-size: 1440px;
+  margin: 0 auto;
+  color: var(--text-color);
+  font-family: var(--main-font), sans-serif;
+  font-weight: var(--main-font-weight);
+  font-size: 18px;
+  line-height: 21px;
+  padding-block-start: 102px;
+  background-image: var(--background);
+  background-size: cover;
+  background-attachment: fixed;
 }
+
+.header {
+  margin: 0 auto;
+  inline-size: var(--section-size);
+  block-size: clamp(20rem, 4.225vw + 19.01rem, 22.813rem);
+  text-transform: uppercase;
+  text-align: center;
+  display: grid;
+  grid-template-rows: 1fr min-content;
+  padding-block-end: 25px;
+  border: 2px solid var(--text-color);
+  background-color: var(--bg-color);
+}
+
+.header_logo {
+  font-family: var(--accent-font), sans-serif;
+  line-height: 1;
+  align-self: end;
+  margin-block-end: 25px;
+}
+
+.header_title {
+  font-size: clamp(3.063rem, 1.502vw + 2.71rem, 4.063rem);
+  margin-block-end: 20px;
+}
+
+.header_subtitle {
+  font-size: clamp(0.875rem, 0.845vw + 0.677rem, 1.438rem);
+}
+
+.header__theme-menu {
+  align-self: end;
+  justify-self: center;
+  padding-inline-start: 20px;
+}
+
+.theme-menu__list {
+  display: flex;
+  flex-direction: column;
+  text-align: start;
+  gap: 14px;
+}
+
+.theme-menu__item {
+  block-size: 14px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+.button {
+  border: none;
+  background-color: transparent;
+  font-family: var(--accent-font);
+  color: inherit;
+  text-transform: inherit;
+  padding: 0;
+  cursor: pointer;
+}
+
+:disabled {
+  cursor: default;
+  opacity: 0.6;
+}
+
+
+
+
+
+
+
+.card-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-block-start: 104px;
+}
+
+.card {
+  inline-size: var(--section-size);
+  border: 2px solid var(--text-color);
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-size: 18px;
+}
+
+.card:not(:last-of-type) {
+  margin-block-end: 54px;
+}
+
+.card_title {
+  font-weight: var(--title-font-weight);
+  line-height: 22px;
+  font-size: inherit;
+  margin: 3px 0 3px 10px;
+}
+
+.card_cover {
+  aspect-ratio: 1 / 1;
+  position: relative;
+  border-block-start: 2px solid var(--text-color);
+  border-block-end: 2px solid var(--text-color);
+}
+
+.card_cover-image {
+  display: block;
+  max-inline-size: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card_cover-label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  color: var(--label-color);
+  text-transform: uppercase;
+  font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: 1;
+}
+
+.card_description {
+  padding: 25px 25px;
+}
+
+.card_paragraph:not(:last-of-type) {
+  padding-block-end: 27px;
+}
+
+.buttons-container {
+  padding: 0 25px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 17px;
+}
+
+.card__like-button {}
+
+.is-liked {}
+
+.like-icon {}
+
+.heart {}
+
+.contour {}
+
+.main-body {}
+
+.core {}
+
+.sparks {}
+
+.card__icon-button {
+  padding: 12.5px 37px;
+  border: 2px solid var(--text-color);
+}
+
+.button__text {}
+
+.footer {
+  margin: 0 auto;
+  padding: 54px 0 102px;
+  inline-size: var(--section-size);
+  text-align: center;
+}
+
+.button-save {
+  border: 2px solid var(--text-color);
+  background-color: var(--bg-color);
+  padding: 18.5px 20px;
+}
+
+.button-save_icon {
+  object-fit: contain;
+  object-position: center;
+}
+
+.button-save_description {}
