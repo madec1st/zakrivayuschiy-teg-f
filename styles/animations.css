@@ -14,4 +14,12 @@
 */
 
 
-@keyframes {}
+@keyframes pushing {
+  0% {
+    left: -20px;
+  }
+
+  100% {
+    left: -16px;
+  }
+}

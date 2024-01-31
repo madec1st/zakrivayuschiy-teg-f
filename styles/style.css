@@ -20,7 +20,7 @@
   margin: 0 auto;
   color: var(--text-color);
   font-family: var(--main-font), sans-serif;
-  font-weight: var(--main-font-weight);
+  font-variation-settings: 'wght' var(--main-font-weight);
   font-size: 18px;
   line-height: 21px;
   padding-block-start: 102px;
@@ -32,19 +32,18 @@
 .header {
   margin: 0 auto;
   inline-size: var(--section-size);
-  block-size: clamp(20rem, 4.225vw + 19.01rem, 22.813rem);
+  block-size: clamp(20.438rem, 3.85vw + 19.535rem, 23rem);
   text-transform: uppercase;
   text-align: center;
+  line-height: normal;
   display: grid;
   grid-template-rows: 1fr min-content;
-  padding-block-end: 25px;
   border: 2px solid var(--text-color);
   background-color: var(--bg-color);
 }
 
 .header_logo {
   font-family: var(--accent-font), sans-serif;
-  line-height: 1;
   align-self: end;
   margin-block-end: 25px;
 }
@@ -61,7 +60,7 @@
 .header__theme-menu {
   align-self: end;
   justify-self: center;
-  padding-inline-start: 20px;
+  padding: 0 0 25px 20px;
 }
 
 .theme-menu__list {
@@ -73,7 +72,6 @@
 
 .theme-menu__item {
   block-size: 14px;
-  font-size: 14px;
   line-height: 1;
 }
 
@@ -81,28 +79,90 @@
   border: none;
   background-color: transparent;
   font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: normal;
   color: inherit;
   text-transform: inherit;
   padding: 0;
   cursor: pointer;
 }
 
-:disabled {
-  cursor: default;
+.theme-menu__button {
+  transition: opacity 0.3s ease;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.theme-menu__button:hover {
   opacity: 0.6;
 }
 
+:disabled {
+  pointer-events: none;
+  opacity: 0.6;
+  position: relative;
+}
 
+:disabled::before {
+  content: '▶';
+  position: absolute;
+  top: 0;
+  left: -20px;
+  color: inherit;
+  animation: pushing 0.5s ease-in-out alternate infinite;
+}
 
+.theme-menu__button:focus {
+  outline: none;
+  opacity: 0.6;
+}
 
+.theme-menu__button::after {
+  content: '';
+  position: absolute;
+  display: block;
+  inline-size: 100%;
+  block-size: 2px;
+  top: 14px;
+  left: 0px;
+  background-color: var(--text-color);
+  opacity: 0.6;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  transform-origin: left;
+}
 
+:focus-visible.theme-menu__button::after {
+  transform: scaleX(1);
+}
 
+/*:focus-visible::after {
+  content: '';
+  position: absolute;
+  display: block;
+  inline-size: 100%;
+  block-size: 2px;
+  top: 14px;
+  left: 0px;
+  background-color: var(--text-color);
+  opacity: 0.6;
+  transform: scaleX(0);
+}
+
+.theme-menu__button:focus-visible {  
+  transition: transform 0.3s ease;
+}
+
+.theme-menu__button:focus-visible::after {
+  transform: scaleX(1);
+}*/
 
 .card-list {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-block-start: 104px;
+  gap: 50px;
+  padding-block-start: 100px;
 }
 
 .card {
@@ -113,13 +173,9 @@
   font-size: 18px;
 }
 
-.card:not(:last-of-type) {
-  margin-block-end: 54px;
-}
-
 .card_title {
-  font-weight: var(--title-font-weight);
-  line-height: 22px;
+  font-variation-settings: 'wght' var(--title-font-weight);
+  line-height: 25px;
   font-size: inherit;
   margin: 3px 0 3px 10px;
 }
@@ -138,23 +194,60 @@
   object-position: center;
 }
 
+.brightness {
+  filter: brightness(150%);
+}
+
+.invert {
+  filter: invert(50%);
+}
+
+.grayscale {
+  filter: grayscale(95%);
+}
+
+.saturate {
+  filter: saturate(250%);
+}
+
+.sepia {
+  filter: sepia(90%);
+}
+
+.opacity {
+  filter: opacity(0.5);
+}
+
+.blur {
+  filter: blur(5px);
+}
+
 .card_cover-label {
   position: absolute;
   top: 25px;
   right: 25px;
-  color: var(--label-color);
+  color: var(--text-color);
   text-transform: uppercase;
   font-family: var(--accent-font);
   font-size: 14px;
-  line-height: 1;
+  line-height: normal;
+  -webkit-text-stroke: 1px var(--label-color);
+  opacity: 0.5;
+  mix-blend-mode: hard-light;
 }
+
+@supports not (-webkit-text-stroke: 1px var(--label-color)) {
+  .card_cover-label {
+    text-shadow: 0 0 3px var(--label-color);
+  }
+} 
 
 .card_description {
   padding: 25px 25px;
 }
 
 .card_paragraph:not(:last-of-type) {
-  padding-block-end: 27px;
+  margin-block-end: 27px;
 }
 
 .buttons-container {
@@ -162,48 +255,106 @@
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 17px;
+  gap: 6px;
 }
 
-.card__like-button {}
+.card__like-button {
+  padding-block-start: 2px;
+}
 
-.is-liked {}
+.sparks {
+  opacity: 0;
+}
 
-.like-icon {}
+.is-liked .main-body {
+  fill: #FF0000;
+}
 
-.heart {}
+.is-liked .core {
+  fill: #FFF;
+}
 
-.contour {}
+.is-liked .sparks {
+  opacity: 1;
+}
 
-.main-body {}
 
-.core {}
+.heart {
+}
 
-.sparks {}
+.contour {
+}
 
 .card__icon-button {
-  padding: 12.5px 37px;
+  padding: 10.5px 35px;
   border: 2px solid var(--text-color);
+  line-height: 0.9;
 }
 
 .button__text {}
 
 .footer {
   margin: 0 auto;
-  padding: 54px 0 102px;
+  padding: 50px 0 100px;
   inline-size: var(--section-size);
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 
 .button-save {
   border: 2px solid var(--text-color);
   background-color: var(--bg-color);
-  padding: 18.5px 20px;
+  line-height: 0.9;
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  gap: 8px;
+  padding: 15px 21px 15px 17px;
+  align-items: center;
 }
 
 .button-save_icon {
-  object-fit: contain;
-  object-position: center;
+  inline-size: 21px;
+  block-size: 21px; /*мобильный 28х28, диалог 39х39*/
 }
 
 .button-save_description {}
+
+
+
+@media (width <= 375px) {
+  .page {
+    margin: 0;
+  }
+
+  .header_title {
+    font-size: clamp(2.5rem, 16.364vw - 0.773rem, 3.063rem);
+  }
+
+  .card_title {
+    margin: 4px 10 6px;
+  }
+
+  .card_cover-label {
+    right: 11px;
+  }
+
+  .footer {
+    margin: 0 auto;
+    padding: 50px 0 100px;
+    inline-size: var(--section-size);
+    display: flex;
+    justify-content: center;
+  }
+  
+  .button-save {
+    grid-template-columns: none; 
+    grid-template-rows: min-content 1fr;
+    justify-items: center;
+    padding: 15px 20px;
+  }
+  
+  .button-save_icon {
+    inline-size: 28px;
+    block-size: 28px;
+  }
+}
