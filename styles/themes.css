@@ -17,6 +17,7 @@
   --title-font-weight: 700;
   --text-color: #000;
   --label-color: #fff;
+  --heart-color: #f00;
   --section-size: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem);
 }
 
@@ -38,6 +39,7 @@
   --title-font-weight: 785;
   --text-color: #00CC14;
   --label-color: #00CC14;
+  --heart-color: #f00;
   --section-size: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem);
 }
 
@@ -60,6 +62,7 @@
     --title-font-weight: 700;
     --text-color: #000;
     --label-color: #fff;
+    --heart-color: #f00;
     --section-size: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem);
   }
 }
@@ -77,6 +80,7 @@
     --title-font-weight: 785;
     --text-color: #00CC14;
     --label-color: #00CC14;
+    --heart-color: #f00;
     --section-size: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem);
   }
 }
