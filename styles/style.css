@@ -433,6 +433,7 @@
   line-height: 0.9;
   padding: 9px 0;
   margin-block-start: 30px;
+  position: relative;
 }
 
 .dialog_button:focus {
@@ -441,6 +442,23 @@
 
 .dialog_button:focus-visible {
   box-shadow: 2px 2px 0px 0px var(--text-color);
+}
+
+.dialog_button::before {
+  content: '';
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  inline-size: 100%;
+  block-size: 100%;
+  background-color: var(--text-color);
+  transform: scaleX(0);
+  transition: transform 0.5s ease-in-out;
+  transform-origin: left;
+}
+
+:hover.dialog_button::before {
+  transform: scaleX(1);
 }
 
 @media (width <= 375px) {
