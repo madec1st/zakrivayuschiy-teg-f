@@ -11,14 +11,8 @@
       repeating-linear-gradient(90deg, #d3d3d3 0px, transparent 2px, #d3d3d3 4px),
       linear-gradient(180deg, #E7E7E7 0.01%, #1A1A1A 100%);
   --bg-color: #fff;
-  --main-font: 'Inter-Variable';
-  --accent-font: 'Press Start 2P';
-  --main-font-weight: 400;
-  --title-font-weight: 700;
   --text-color: #000;
   --label-color: #fff;
-  --heart-color: #f00;
-  --section-size: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem);
 }
 
 @media (width <= 375px) {
@@ -33,14 +27,10 @@
       repeating-linear-gradient(90deg, #000 0px, transparent 2px, #000 4px),
       linear-gradient(180deg, #007F0C 0.01%, #004306 100%);
   --bg-color: #000;
-  --main-font: 'Inter-Variable';
-  --accent-font: 'Press Start 2P';
   --main-font-weight: 465;
   --title-font-weight: 785;
   --text-color: #00CC14;
   --label-color: #00CC14;
-  --heart-color: #f00;
-  --section-size: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem);
 }
 
 @media (width <= 375px) {
@@ -56,14 +46,8 @@
         repeating-linear-gradient(90deg, #d3d3d3 0px, transparent 2px, #d3d3d3 4px),
         linear-gradient(180deg, #E7E7E7 0.01%, #1A1A1A 100%);
     --bg-color: #fff;
-    --main-font: 'Inter-Variable';
-    --accent-font: 'Press Start 2P';
-    --main-font-weight: 400;
-    --title-font-weight: 700;
     --text-color: #000;
     --label-color: #fff;
-    --heart-color: #f00;
-    --section-size: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem);
   }
 
   @media (width <= 375px) {
@@ -80,14 +64,10 @@
         repeating-linear-gradient(90deg, #000 0px, transparent 2px, #000 4px),
         linear-gradient(180deg, #007F0C 0.01%, #004306 100%);
     --bg-color: #000;
-    --main-font: 'Inter-Variable';
-    --accent-font: 'Press Start 2P';
     --main-font-weight: 465;
     --title-font-weight: 785;
     --text-color: #00CC14;
     --label-color: #00CC14;
-    --heart-color: #f00;
-    --section-size: clamp(23.438rem, 30.516vw + 16.285rem, 43.75rem);
   }
 
   @media (width <= 375px) {

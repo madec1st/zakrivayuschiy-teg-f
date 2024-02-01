@@ -13,6 +13,61 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 */
 
+.card__icon-button .core {
+  fill: transparent;
+  transition: fill 0.3s;
+  transition-delay: 0.03s;
+}
+
+.card__icon-button .main-body {
+  fill: transparent;
+  transition: fill 0.3s;
+}
+
+.card__icon-button:hover .core {
+  fill: var(--text-color);
+}
+
+.card__icon-button:hover .main-body {
+  transition-delay: 0.05s;
+  fill: var(--text-color);
+}
+
+.card__icon-button:active .core {
+  fill: var(--heart-color);
+}
+
+.card__icon-button:active .main-body {
+  fill: var(--heart-color);
+}
+
+.like-icon.is-liked .core {
+  transition: fill 0.3s;
+  fill: var(--heart-color)
+}
+
+.like-icon.is-liked .main-body {
+  transition-delay: 0.05s;
+  transition: fill 0.3s;
+  fill: var(--heart-color)
+}
+
+.like-icon.is-liked .contour {
+  transition-delay: 0.06s;
+  transition: fill 0.3s;
+  fill: var(--heart-color);
+}
+
+.like-icon.is-liked .heart {
+  animation-delay: 0.1s;
+  animation: scale 0.3s ease-in alternate;
+  transform-origin: center;
+}
+
+.like-icon.is-liked .sparks {
+  animation-delay: 0.3s;
+  animation: splash 0.3s ease-in alternate;
+}
 
 @keyframes pushing {
   0% {

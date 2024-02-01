@@ -71,8 +71,8 @@
 }
 
 .theme-menu__item {
-  block-size: 14px;
-  line-height: 1;
+  font-size: 14px;
+  line-height: 0.9;
 }
 
 .button {
@@ -201,6 +201,10 @@
   filter: blur(5px);
 }
 
+.combo-filter {
+  filter: saturate(230%) grayscale(80%);
+}
+
 .card_cover-label {
   position: absolute;
   top: 25px;
@@ -253,59 +257,6 @@
 .card__icon-button:focus-visible .like-icon {
   inline-size: 37px;
   block-size: 33.5px;
-}
-
-.card__icon-button .core {
-  fill: transparent;
-  transition: fill 0.3s;
-  transition-delay: 0.03s;
-}
-
-.card__icon-button .main-body {
-  fill: transparent;
-  transition: fill 0.3s;
-}
-
-.card__icon-button:hover .core {
-  fill: var(--text-color);
-}
-
-.card__icon-button:hover .main-body {
-  transition-delay: 0.05s;
-  fill: var(--text-color);
-}
-
-.card__icon-button:active .core,
-.card__icon-button:active .main-body {
-  fill: var(--heart-color);
-}
-
-.like-icon.is-liked .core {
-  transition: fill 0.3s;
-  fill: var(--heart-color)
-}
-
-.like-icon.is-liked .main-body {
-  transition-delay: 0.05s;
-  transition: fill 0.3s;
-  fill: var(--heart-color)
-}
-
-.like-icon.is-liked .contour {
-  transition-delay: 0.06s;
-  transition: fill 0.3s;
-  fill: var(--heart-color);
-}
-
-.like-icon.is-liked .heart {
-  animation-delay: 0.1s;
-  animation: scale 0.3s ease-in alternate;
-  transform-origin: center;
-}
-
-.like-icon.is-liked .sparks {
-  animation-delay: 0.3s;
-  animation: splash 0.3s ease-in alternate;
 }
 
 .card__like-button {
@@ -471,19 +422,11 @@
   }
 
   .card_title {
-    margin: 4px 10 6px;
+    margin: 5px 10px;
   }
 
   .card_cover-label {
     right: 11px;
-  }
-
-  .footer {
-    margin: 0 auto;
-    padding: 50px 0 100px;
-    inline-size: var(--section-size);
-    display: flex;
-    justify-content: center;
   }
   
   .button-save {
