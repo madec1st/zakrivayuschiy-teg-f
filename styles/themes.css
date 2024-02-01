@@ -23,9 +23,9 @@
 
 :root.theme-dark {
   --background: 
-      repeating-linear-gradient(0deg, #000 0px, transparent 2px, #000 4px), 
+      repeating-linear-gradient(0deg, transparent 0px, transparent 2px, #000 4px),
       repeating-linear-gradient(90deg, #000 0px, transparent 2px, #000 4px),
-      linear-gradient(180deg, #007F0C 0.01%, #004306 100%);
+      linear-gradient(180deg, #007F0C 0%, #004306 100%);
   --bg-color: #000;
   --main-font-weight: 465;
   --title-font-weight: 785;
@@ -60,9 +60,9 @@
 @media (prefers-color-scheme: dark) {
   :root {
     --background: 
-        repeating-linear-gradient(0deg, #000 0px, transparent 2px, #000 4px), 
+        repeating-linear-gradient(0deg, transparent 0px, transparent 2px, #000 4px),
         repeating-linear-gradient(90deg, #000 0px, transparent 2px, #000 4px),
-        linear-gradient(180deg, #007F0C 0.01%, #004306 100%);
+        linear-gradient(180deg, #007F0C 0%, #004306 100%);
     --bg-color: #000;
     --main-font-weight: 465;
     --title-font-weight: 785;
