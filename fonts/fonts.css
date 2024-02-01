@@ -12,6 +12,6 @@
   src:
       local('Inter'),
       local('Inter-Variable'), 
-      url(../fonts/Inter-Variable.woff2) format('woff2');
+      url(../fonts/Inter-Variable.woff2) format('woff2-variations');
   font-display: swap;
 }

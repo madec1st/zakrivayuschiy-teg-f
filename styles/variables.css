@@ -2,8 +2,8 @@
 
 :root {
   --background: 
-      repeating-linear-gradient(0deg, #d3d3d3 0px, transparent 2px),
-      repeating-linear-gradient(90deg, #d3d3d3 2px, transparent 4px),
+      repeating-linear-gradient(0deg, #d3d3d3 0px, transparent 2px, #d3d3d3 4px), 
+      repeating-linear-gradient(90deg, #d3d3d3 0px, transparent 2px, #d3d3d3 4px),
       linear-gradient(180deg, #E7E7E7 0.01%, #1A1A1A 100%);
   --bg-color: #fff;
   --main-font: 'Inter-Variable';
